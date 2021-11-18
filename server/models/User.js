@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
-const Order = require('./Order');
 
 const userSchema = new Schema({
   firstName: {
@@ -18,14 +17,14 @@ const userSchema = new Schema({
   email: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
+    match: [/.+@.+\..+/, 'Must use a valid email address'],
   },
   password: {
     type: String,
     required: true,
-    minlength: 5
-  },
-  orders: [Order.schema]
+    minlength: 8
+  }
 });
 
 // set up pre-save middleware to create password

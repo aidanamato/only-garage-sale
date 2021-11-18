@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+
 import './App.css';
 
 // components
@@ -15,7 +16,7 @@ import NoMatch from './pages/NoMatch';
 function App() {
   return (
     <Router>
-      
+
         <Routes>
           <Route exact path="/" element={<Home/>} />
           <Route exact path="/login" element={<Login/>} />

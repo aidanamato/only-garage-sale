@@ -1,16 +1,18 @@
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
 import './App.css';
 
 // components
-// import Nav from './components/Nav';
+// import Nav from './components/Navbar';
 
 // pages
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Settings from './pages/Settings';
 import NoMatch from './pages/NoMatch';
+
 
 
 function App() {

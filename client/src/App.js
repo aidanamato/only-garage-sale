@@ -10,7 +10,6 @@ import Login from './pages/Login';
 import Settings from './pages/Settings';
 import NoMatch from './pages/NoMatch';
 
-
 function App() {
   return (
     <Router>

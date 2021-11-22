@@ -1,0 +1,24 @@
+{
+  "name": "only-garage-sale",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install": "cd server && npm i && cd ../client && npm i",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aidanamato/only-garage-sale.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aidanamato/only-garage-sale/issues"
+  },
+  "homepage": "https://github.com/aidanamato/only-garage-sale#readme",
+  "devDependencies": {
+    "concurrently": "^6.4.0"
+  }
+}

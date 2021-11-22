@@ -18,7 +18,7 @@ function App() {
             <Route exact path="/" element={<Home/>} />
             <Route exact path="/login" element={<Login/>} />
             <Route exact path="/settings" element={<Settings/>} />
-            <Route component={<NoMatch/>} />
+            <Route path="*" element={<NoMatch/>} />
           </Routes>
       </PageProvider>
     </Router>

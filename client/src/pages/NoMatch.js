@@ -3,8 +3,13 @@ import Jumbotron from '../components/Jumbotron';
 
 const NoMatch = () => {
   return (
-    <h2>404 Not Found</h2>
-  )
-}
+    <div>
+      <Jumbotron>
+        <h1>404 Page Not Found</h1>
+      </Jumbotron>
+    </div>
+  );
+};
+
 
 export default NoMatch;

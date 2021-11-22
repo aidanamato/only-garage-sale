@@ -1,6 +1,5 @@
-import React from 'react';
 import SignUpForm from './SignUp';
-import LoginForm from './Login';
+// import LoginForm from './Login';
 
 // import mui here 
 import * as React from 'react';
@@ -11,11 +10,12 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import { sizing } from '@mui/system';
 
-import Auth from '../utils/auth';
+// import Auth from '../utils/auth';
 
 const AppNavbar = () => {
-  const [showModal, setShowModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -31,7 +31,7 @@ const AppNavbar = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
+            Garagebook
           </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>

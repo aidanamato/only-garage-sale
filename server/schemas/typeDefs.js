@@ -8,7 +8,7 @@ const typeDefs = gql`
     lastName: String
     email: String
     password: String
-    address: String
+    zipCode: String
   }
 
   type Auth {
@@ -21,7 +21,7 @@ const typeDefs = gql`
     lastName: String!
     email: String!
     password: String!
-    address: String
+    zipCode: String
   }
 
   type Query {

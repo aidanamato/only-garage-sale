@@ -37,8 +37,8 @@ const AppNavbar = () => {
             >
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              News
+            <Typography variant="h7" component="div" sx={{ flexGrow: 1 }}>
+              Only Garage Sale
             </Typography>
             <Button color="inherit" onClick={clickHandler}>Login</Button>
             <Button color="inherit" onClick={clickHandler}>Sign Up</Button>

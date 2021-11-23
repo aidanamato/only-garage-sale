@@ -11,9 +11,9 @@ const typeDefs = gql`
     address: String
   }
 
-  type Query {
-    users: [User]
-
+  type Auth {
+    token: ID
+    user: User
   }
 
   input userInput {
@@ -24,8 +24,14 @@ const typeDefs = gql`
     address: String
   }
 
+  type Query {
+    users: [User]
+  }
+
   type Mutation {
-    addUser(user: userInput!): User
+    addUser(user: userInput!): Auth
+    login(email: String!, password: String!): Auth
+    deleteUser(_id: ID!): [User]
   }
 `;
 

@@ -8,6 +8,8 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
+import HomeIcon1 from '@mui/icons-material/Home';
+import PersonIcon from '@mui/icons-material/Person';
 // import MenuIcon from '@mui/icons-material/Menu';
 
 import SignUp from '../SignUp';
@@ -37,11 +39,12 @@ const AppNavbar = () => {
             >
               {/* <MenuIcon /> */}
             </IconButton>
+            <HomeIcon1 sx={{ fontSize: 25 }} />
             <Typography variant="h7" component="div" sx={{ flexGrow: 1 }}>
               Only Garage Sale
             </Typography>
-            <Button color="inherit" onClick={clickHandler}>Login</Button>
-            <Button color="inherit" onClick={clickHandler}>Sign Up</Button>
+            <Button color="inherit" onClick={clickHandler}><PersonIcon sx={{ fontSize: 25 }} />Login</Button>
+            <Button color="inherit" onClick={clickHandler}><PersonIcon sx={{ fontSize: 25 }} />Sign Up</Button>
           </Toolbar>
         </AppBar>
       </Box>

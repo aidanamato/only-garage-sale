@@ -20,7 +20,7 @@ function App() {
     <Router>
       <PageProvider>
         <Navbar />
-          <Routes>
+        <Routes>
             <Route exact path="/" element={<Home/>} />
             <Route exact path="/login" element={<Login/>} />
             <Route exact path="/settings" element={<Settings/>} />

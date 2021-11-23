@@ -1,13 +1,13 @@
 import React from 'react';
 
-import Navbar from '../components/Navbar';
-import Search from '../components/Search';
+import Search from '../components/Search/index';
+import ActionAreaCard from '../components/Cards';
 
 const Home = () => {
   return (
     <>
-      <Navbar />
       <Search />
+      <ActionAreaCard />
     </>
   );
 };

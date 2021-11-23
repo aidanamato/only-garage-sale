@@ -15,9 +15,9 @@ import './App.css';
 import Navbar from './components/Navbar';
 
 // pages
-import Search from './components/Search/Search';
+import Home from './pages/Home';
 import Login from './pages/Login';
-import Settings from './pages/Settings';
+import Event from './pages/Event';
 import NoMatch from './pages/NoMatch';
 
 const httpLink = createHttpLink({
@@ -46,9 +46,9 @@ function App() {
         <PageProvider>
           <Navbar />
           <Routes>
-            <Route exact path="/" element={<Search/>} />
+            <Route exact path="/" element={<Home/>} />
             <Route exact path="/login" element={<Login/>} />
-            <Route exact path="/settings" element={<Settings/>} />
+            <Route exact path='/events/:id' element={<Event/>} />
             <Route path="*" element={<NoMatch/>} />
           </Routes>
         </PageProvider>

@@ -55,7 +55,7 @@ function ActionAreaCard() {
                         component="img"
                         height="140"
                         image={sale.photo}
-                        alt="placeholder"
+                        alt={sale.title}
                     />
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="div">

@@ -1,12 +1,13 @@
 import React from 'react';
-// import 
 
 import Navbar from '../components/Navbar';
+import Search from '../components/Search';
 
 const Home = () => {
   return (
     <>
       <Navbar />
+      <Search />
     </>
   );
 };

@@ -1,13 +1,13 @@
 import React from 'react';
 
-import Navbar from '../components/Navbar';
 import Search from '../components/Search';
+import Post from '../components/Post';
 
 const Home = () => {
   return (
     <>
-      <Navbar />
       <Search />
+      <Post />
     </>
   );
 };

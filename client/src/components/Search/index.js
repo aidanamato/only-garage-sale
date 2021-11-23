@@ -32,7 +32,7 @@ export default function Search() {
       )}
       style={{ width: 'auto' }}
       renderInput={(params) => (
-        <TextField {...params} label="Search" placeholder="Filter" />
+        <TextField {...params} placeholder="Tags" />
       )}
     />
   );

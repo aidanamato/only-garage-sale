@@ -11,7 +11,7 @@ import './App.css';
 // pages
 import Home from './pages/Home';
 import Login from './pages/Login';
-import Settings from './pages/Settings';
+import Event from './pages/Event';
 import NoMatch from './pages/NoMatch';
 
 
@@ -23,7 +23,7 @@ function App() {
         <Routes>
             <Route exact path="/" element={<Home/>} />
             <Route exact path="/login" element={<Login/>} />
-            <Route exact path="/settings" element={<Settings/>} />
+            <Route exact path='/events/:id' element={<Event/>} />
             <Route path="*" element={<NoMatch/>} />
           </Routes>
       </PageProvider>

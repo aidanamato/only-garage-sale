@@ -1,5 +1,6 @@
 import React from 'react';
 import { usePageContext } from '../../utils/GlobalState';
+import Auth from '../../utils/auth';
 
 // import mui here
 import AppBar from '@mui/material/AppBar';
@@ -11,15 +12,22 @@ import IconButton from '@mui/material/IconButton';
 // import MenuIcon from '@mui/icons-material/Menu';
 
 import SignUp from '../SignUp';
+import Login from '../Login';
 
 const AppNavbar = () => {
   const [, dispatch] = usePageContext();
 
   const clickHandler = (event) => {
-    if (event.target.textContent === "Sign Up") {
+    if (event.target.textContent === 'Sign Up') {
       dispatch({
         type: 'UPDATE_SIGNUP_MODAL'
       });
+    } else if (event.target.textContent === 'Login') {
+      dispatch({
+        type: 'UPDATE_LOGIN_MODAL'
+      })
+    } else if (event.target.textContent === 'Logout') {
+      Auth.logout();
     }
   }
 
@@ -40,12 +48,22 @@ const AppNavbar = () => {
             <Typography variant="h7" component="div" sx={{ flexGrow: 1 }}>
               Only Garage Sale
             </Typography>
-            <Button color="inherit" onClick={clickHandler}>Login</Button>
-            <Button color="inherit" onClick={clickHandler}>Sign Up</Button>
+            {Auth.loggedIn() ?
+              <> 
+                <Button color="inherit" onClick={clickHandler}>My Events</Button>
+                <Button color="inherit" onClick={clickHandler}>Logout</Button>
+              </>
+            : 
+              <> 
+                <Button color="inherit" onClick={clickHandler}>Login</Button>
+                <Button color="inherit" onClick={clickHandler}>Sign Up</Button>
+              </>
+            }
           </Toolbar>
         </AppBar>
       </Box>
       <SignUp />
+      <Login />
     </>
   );
 };

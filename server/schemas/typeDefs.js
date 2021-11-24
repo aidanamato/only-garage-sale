@@ -31,7 +31,8 @@ const typeDefs = gql`
   type Mutation {
     addUser(user: userInput!): Auth
     login(email: String!, password: String!): Auth
-    deleteUser(_id: ID!): [User]
+    deleteUser(_id: ID!): User
+    deleteUsers: Int
   }
 `;
 

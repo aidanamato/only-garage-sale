@@ -7,6 +7,11 @@ export const reducer = (state, action) => {
         ...state,
         signupModal: !state.signupModal
       }
+    case 'UPDATE_LOGIN_MODAL':
+      return {
+        ...state,
+        loginModal: !state.loginModal
+      }
     default:
       return state;
   }

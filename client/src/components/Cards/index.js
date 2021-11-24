@@ -56,8 +56,8 @@ function ActionAreaCard() {
     return (
         <>
             {sales.map((sale) => (
-                <Link to={`/events/${sale.id}`}>
-                    <Card sx={{ margin: '15px', textAlign: 'center' }} key={sale.id}>
+                <Link to={`/events/${sale.id}`} key={sale.id}>
+                    <Card sx={{ margin: '15px', textAlign: 'center' }}>
                         <CardActionArea>
                             <CardMedia
                                 component="img"

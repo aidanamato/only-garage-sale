@@ -6,7 +6,8 @@ const { Provider } = PageContext;
 
 const PageProvider = ({value = [], ...props}) => {
   const [state, dispatch] = usePageReducer({
-    signupModal: false
+    signupModal: false,
+    loginModal: false
   });
 
   console.log(state);

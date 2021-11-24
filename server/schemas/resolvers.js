@@ -36,6 +36,10 @@ const resolvers = {
       const deletedUser = await User.findOne({ _id });
       await User.deleteOne({ _id });
       return deletedUser;
+    },
+    deleteUsers: async () => {
+      const deletedUsers = await User.deleteMany({});
+      return deletedUsers.deletedCount;
     }
   }
 };

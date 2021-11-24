@@ -9,14 +9,13 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import { PageProvider } from './utils/GlobalState';
 
-import './App.css';
+import './index.css';
 
 // components
 import Navbar from './components/Navbar';
 
 // pages
 import Home from './pages/Home';
-import Login from './pages/Login';
 import Event from './pages/Event';
 import NoMatch from './pages/NoMatch';
 
@@ -47,7 +46,6 @@ function App() {
           <Navbar />
           <Routes>
             <Route exact path="/" element={<Home/>} />
-            <Route exact path="/login" element={<Login/>} />
             <Route exact path='/events/:id' element={<Event/>} />
             <Route path="*" element={<NoMatch/>} />
           </Routes>

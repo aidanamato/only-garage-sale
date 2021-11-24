@@ -28,6 +28,7 @@ const typeDefs = gql`
     firstName: String
     lastName: String
     location: String
+    description: String
     startTime: Date
     endTime: Date
     images: [Image]
@@ -52,6 +53,7 @@ const typeDefs = gql`
     firstName: String!
     lastName: String!
     location: String!
+    description: String
     startTime: String!
     endTime: String!
     images: [String]

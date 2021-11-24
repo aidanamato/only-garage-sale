@@ -1,0 +1,40 @@
+#event-card-flex {
+  display: flex;
+  width: 100vw;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: rgb(231, 212, 186);
+}
+
+.event-card {
+  position: relative;
+  width: 28vw;
+  height: 30vh;
+  margin: 20px 30px;
+  box-shadow: -2px 2px 5px rgb(88, 52, 23);
+}
+
+.card-img {
+  width: inherit;
+  height: inherit;
+  opacity: 0.8;
+}
+
+.event-text {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: rgb(133, 119, 101);
+  color: whitesmoke;
+}
+
+.event-text h2 {
+  font-size: 28px;
+}
+
+.event-text h3 {
+  font-size: 16px;
+}

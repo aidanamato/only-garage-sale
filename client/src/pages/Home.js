@@ -1,8 +1,19 @@
 import React from 'react';
+import Auth from '../utils/auth';
+
+
+import CreatePost from '../components/CreatePost';
+import Search from '../components/Search/index';
+import EventCard from '../components/EventCard';
+
 
 const Home = () => {
   return (
-    <h1>Hello World</h1>
+    <>
+      <Search />
+      {Auth.loggedIn() && <CreatePost />}
+      <EventCard />
+    </>
   );
 };
 

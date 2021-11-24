@@ -11,3 +11,67 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Event Styles Start */
+#single-event {
+  background-color: rgb(231, 212, 186);
+  min-height: 113vh;
+  text-align: center;
+}
+
+#single-event h2 {
+  text-align: center;
+  font-size: 46px;
+  margin: 0;
+  padding-top: 40px;
+}
+
+#single-event h3 {
+  font-size: 24px;
+}
+
+.content-flex {
+  display: flex;
+  width: 80%;
+  padding: 60px 20px;
+  margin: auto;
+  justify-content: space-evenly;
+  margin-top: 60px;
+  border: 5px solid orange;
+}
+
+.content-flex img {
+  width: 35%;
+  border: 2px solid rgb(116, 56, 56);
+  border-radius: 12px;
+  box-shadow: -2px 2px 5px rgb(88, 52, 23);
+}
+
+.text-container, .host {
+  width: 45%;
+  text-align: left;
+  margin: 0;
+}
+
+.text-container h4 {
+  font-weight: normal;
+  font-style: italic;
+  font-size: 18px;
+  margin: 10px 0 0;
+}
+
+.gallery {
+  display: flex;
+  width: 70%;
+  justify-content: space-evenly;
+  margin: 20px auto 30px;
+  border: 1px solid rgb(88, 52, 23);
+}
+
+.gallery img {
+  width: 35%;
+  margin: 20px;
+  border: 1px solid rgb(117, 77, 44);
+  border-radius: 12px;
+  box-shadow: -1px 1px 3px rgb(88, 52, 23);
+}

@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
-
-const { Schema } = mongoose;
+const { format_zip } = require('../utils/helpers');
 const bcrypt = require('bcrypt');
+
+const Event = require('./Event');
+const { Schema } = mongoose;
 
 const userSchema = new Schema({
   firstName: {
@@ -25,14 +27,12 @@ const userSchema = new Schema({
     required: true,
     minlength: 8
   },
-  address: {
+  zipCode: {
     type: String,
     required: true,
+    get: zip => format_zip(zip)
   },
-
-  
-
-  
+  events: [Event.schema]
 });
 
 // set up pre-save middleware to create password

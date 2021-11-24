@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
-
-const { Schema } = mongoose;
+const { format_zip } = require('../utils/helpers');
 const bcrypt = require('bcrypt');
+
 const Event = require('./Event');
+const { Schema } = mongoose;
 
 const userSchema = new Schema({
   firstName: {
@@ -29,6 +30,7 @@ const userSchema = new Schema({
   zipCode: {
     type: String,
     required: true,
+    get: zip => format_zip(zip)
   },
   events: [Event.schema]
 });

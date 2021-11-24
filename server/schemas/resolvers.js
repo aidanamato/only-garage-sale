@@ -9,7 +9,9 @@ const resolvers = {
       return await User.find();
     },
     events: async () => {
-      return await Event.find();
+      const events = await Event.find();
+      console.log(events[4]);
+      return events;
     }
   },
   Mutation: {

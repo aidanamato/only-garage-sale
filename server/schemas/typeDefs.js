@@ -12,14 +12,26 @@ const typeDefs = gql`
     zipCode: String
   }
 
+  type Image {
+    _id: ID
+    url: String
+  }
+
+  type Tag {
+    _id: ID
+    name: String
+  }
+
   type Event {
     _id: ID
     title: String
+    firstName: String
+    lastName: String
     location: String
     startTime: Date
     endTime: Date
-    images: [String]
-    tags: [String]
+    images: [Image]
+    tags: [Tag]
   }
 
   type Auth {
@@ -37,6 +49,8 @@ const typeDefs = gql`
 
   input eventInput {
     title: String!
+    firstName: String!
+    lastName: String!
     location: String!
     startTime: String!
     endTime: String!

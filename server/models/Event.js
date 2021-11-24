@@ -20,6 +20,14 @@ const eventSchema = new Schema({
     required: true,
     trim: true
   },
+  firstName: {
+    type: String,
+    required: true
+  },
+  lastName: {
+    type: String,
+    required: true
+  },
   location: {
     type: String,
     required: true,

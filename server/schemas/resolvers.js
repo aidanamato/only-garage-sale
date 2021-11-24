@@ -1,11 +1,15 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User } = require('../models');
+const { dateScalar } = require('./scalars');
+const { User, Event } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
     users: async () => {
       return await User.find();
+    },
+    events: async () => {
+      return await Event.find();
     }
   },
   Mutation: {
@@ -40,8 +44,13 @@ const resolvers = {
     deleteUsers: async () => {
       const deletedUsers = await User.deleteMany({});
       return deletedUsers.deletedCount;
+    },
+    addEvent: async (parent, args) => {
+      const event = await Event.create(args.event);
+      return event;
     }
-  }
+  },
+  Date: dateScalar
 };
 
 module.exports = resolvers;

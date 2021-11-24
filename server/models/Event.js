@@ -1,7 +1,18 @@
 const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
-const Tag = require('./Tag');
+
+const imageSchema = new Schema({
+  url: {
+    type: String
+  }
+})
+
+const tagSchema = new Schema({
+  name: {
+    type: String
+  }
+});
 
 const eventSchema = new Schema({
   title: {
@@ -22,7 +33,8 @@ const eventSchema = new Schema({
     type: Date,
     required: true
   },
-  tags: [Tag.schema]
+  images: [imageSchema],
+  tags: [tagSchema]
 });
 
 const Event = mongoose.model('Event', eventSchema);

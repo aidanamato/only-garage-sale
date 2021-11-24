@@ -21,5 +21,8 @@
   "homepage": "https://github.com/aidanamato/only-garage-sale#readme",
   "devDependencies": {
     "concurrently": "^6.4.0"
+  },
+  "dependencies": {
+    "@mui/lab": "^5.0.0-alpha.56"
   }
 }

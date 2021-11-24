@@ -34,6 +34,7 @@ db.once('open', async () => {
     const { firstName, lastName } = users[Math.floor(Math.random() * users.length)];
 
     const location = faker.address.streetAddress();
+    const description = faker.lorem.paragraph();
     let startTime;
     let endTime;
     const images = [];
@@ -67,7 +68,7 @@ db.once('open', async () => {
     }
 
     const event = await Event.create(
-      { title, firstName, lastName, location, startTime, endTime }
+      { title, firstName, lastName, location, description, startTime, endTime }
     );
     const updatedEvent = await Event.findOneAndUpdate(
       { _id: event._id },

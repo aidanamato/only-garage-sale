@@ -33,6 +33,9 @@ const eventSchema = new Schema({
     required: true,
     trim: true
   },
+  description: {
+    type: String
+  },
   startTime: {
     type: Date,
     required: true

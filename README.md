@@ -22,9 +22,6 @@
   
   ## Link
  
-    
-
-  
   ## Contribute
 
   If anyone would like to contribute any changes, please submit a pull request laying out the changes for review, Thanks!

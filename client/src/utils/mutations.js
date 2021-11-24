@@ -21,3 +21,11 @@ export const LOGIN = gql`
     }
   }
 `
+
+export const ADD_EVENT = gql`
+  mutation ($event: eventInput!) {
+    addEvent (event: $event) {
+      _id
+    }
+  }
+`;

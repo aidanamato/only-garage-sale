@@ -1,4 +1,5 @@
 import React from 'react';
+import Auth from '../utils/auth';
 
 
 import CreatePost from '../components/CreatePost';
@@ -10,7 +11,7 @@ const Home = () => {
   return (
     <>
       <Search />
-      <CreatePost />
+      {Auth.loggedIn() && <CreatePost />}
       <EventCard />
     </>
   );

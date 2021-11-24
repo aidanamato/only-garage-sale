@@ -21,8 +21,7 @@ function Event() {
 
   const displayGallery = () => {
     if (userData.images.length === 3) {
-      return 
-        <> 
+      return <> 
           <img src={userData.images[2].url} alt="Garage sale" />
           <img src={userData.images[1].url} alt="Garage sale" />
         </>

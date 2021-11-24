@@ -34,7 +34,7 @@ function EventCard() {
       {salesArr.map(sale => (
         <Link to={`/events/${sale._id}`} key={sale._id} style={{textDecoration: 'none'}}>
           <div className="event-card">
-            <img className="card-img" src={sale.images[0].url} alt={sale.title} />
+            <img className="card-img" src={sale.images[0] && sale.images[0].url} alt={sale.title} />
             <div className="event-text">
               <h2>{sale.title}</h2>
               <h3>{sale.startTime} - {sale.endTime}</h3>

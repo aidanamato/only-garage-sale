@@ -1,4 +1,6 @@
-import * as React from 'react';
+import React, { useState, useRef } from 'react';
+import { useMutation } from '@apollo/client';
+import { ADD_EVENT } from '../../utils/mutations';
 
 // Post Button
 import Fab from '@mui/material/Fab';
@@ -19,7 +21,17 @@ import {
 import { Box } from '@mui/system';
 
 function CreatePost() {
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
+    const [formState] = useState({
+      title: useRef(),
+      address: useRef(),
+      description: useRef(),
+      startTime: useRef(),
+      endTime: useRef()
+    });
+    const [errorMsg, setErrorMsg] = useState();
+
+    const [addEvent] = useMutation(ADD_EVENT);
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -36,11 +48,40 @@ function CreatePost() {
       zIndex: 10,
     }
 
-    const [value, setValue] = React.useState(new Date('2021-11-24T11:11:11'));
+    const submitHandler = async (event) => {
+      event.preventDefault();
+      
+      console.log(formState);
+      // check to see each field in the form is populated
+      const validateForm = Object.values(formState).every(ref => ref.current.value);
+      if (!validateForm) {
+        setErrorMsg('All fields required')
+      }
 
-    const handleChange = (newValue) => {
-      setValue(newValue);
+      const eventData = Object.values(formState).map(ref => ref.current.value);
+      const eventObj = {
+        title: eventData[0],
+        address: eventData[1],
+        description: eventData[2],
+        startTime: eventData[3],
+        endTime: eventData[4]
+      }
+      console.log(eventObj);
+
+      // try {
+      //   const { data } = await addEvent({
+      //     variables: {
+      //       event: eventObj
+      //     }
+      //   });
+
+      //   console.log(data);
+      // } catch (err) {
+      //   console.log(err);
+      //   setErrorMsg('Error Signing Up');
+      // }
     };
+  
 
     return (
         <div>
@@ -56,8 +97,12 @@ function CreatePost() {
                         m: 'auto'
                     }}
                 >
-                    Create Post
+                    Post a Yard Sale!
                 </DialogTitle>
+                {errorMsg && 
+                <div
+                  style={{textAlign: 'center', color: 'red'}}
+                >{errorMsg}</div>}
                 <Box
                     component='form'
                     sx={{
@@ -68,6 +113,7 @@ function CreatePost() {
                     }}
                     noValidate
                     autoComplete='off'
+                    onSubmit={submitHandler}
                 >
                     <div>
                         <TextField              
@@ -75,45 +121,40 @@ function CreatePost() {
                             id='outlined-basic-fullWidth-margin-normal' 
                             label='Title' 
                             margin="normal"
-                            variant='outlined' />
+                            variant='outlined'
+                            inputRef={formState.title} />
                         <TextField 
                             fullWidth label="fullWidth"
                             id='outlined-basic-fullWidth-margin-normal' 
                             label='Address' 
                             margin="normal"
-                            variant='outlined' />
+                            variant='outlined'
+                            inputRef={formState.address} />
+                        <TextField
+                          fullWidth label="fullWidth"
+                          id="outlined-textarea-fullWidth-margin-normal"
+                          label="Description"
+                          margin="normal"
+                          placeholder=""
+                          multiline 
+                          inputRef={formState.description}/>
+                        <TextField
+                          fullWidth label="fullWidth"
+                          id="outlined-textarea-fullWidth-margin-normal"
+                          label="Start"
+                          margin="normal"
+                          placeholder=""
+                          multiline 
+                          inputRef={formState.startTime}/>
+                        <TextField
+                          fullWidth label="fullWidth"
+                          id="outlined-textarea-fullWidth-margin-normal"
+                          label="End"
+                          margin="normal"
+                          placeholder=""
+                          multiline 
+                          inputRef={formState.endTime}/>
                     </div>
-                    <TextField
-                        fullWidth label="fullWidth"
-                        id="outlined-textarea-fullWidth-margin-normal"
-                        label="Description"
-                        margin="normal"
-                        placeholder=""
-                        multiline />
-                    
-                      <LocalizationProvider dateAdapter={AdapterDateFns}>
-                        <MobileDatePicker
-                            sx={{ m: 8 }}
-                            label="Date Start"
-                            inputFormat="MM/dd/yyyy"
-
-                            value={value}
-                            onChange={handleChange}
-                            renderInput={(params) => <TextField {...params} />}
-
-                        />
-                        <div></div>
-                        <MobileDatePicker
-                            sx={{ m: 8 }}
-                            label="Date End"
-                            inputFormat="MM/dd/yyyy"
-
-                            value={value}
-                            onChange={handleChange}
-                            renderInput={(params) => <TextField {...params} />}
-                        />
-                      </LocalizationProvider>
-                    
                     <Button 
                         sx={{
                             width: '75%',
@@ -123,6 +164,7 @@ function CreatePost() {
                         id="margin-normal"
                         margin="normal"
                         variant='contained'
+                        type='submit'
                     >
                         Post
                     </Button>

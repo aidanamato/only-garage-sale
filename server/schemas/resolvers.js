@@ -50,6 +50,7 @@ const resolvers = {
       return deletedUsers.deletedCount;
     },
     addEvent: async (parent, args) => {
+      console.log(args);
       const event = await Event.create(args.event);
       return event;
     }

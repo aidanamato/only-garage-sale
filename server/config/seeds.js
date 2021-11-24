@@ -1,5 +1,6 @@
 const db = require('./connection');
 const faker = require('faker');
+const coolImages = require('cool-images');
 
 const { User, Event } = require('../models');
 
@@ -49,11 +50,9 @@ db.once('open', async () => {
       endTime = date1;
     }
 
-    console.log(startTime, endTime);
-
     for (let i = 0; i < (Math.floor(Math.random() * 3) + 1); i++) {
       images.push({
-        url: faker.image.imageUrl()
+        url: coolImages.one()
       });
     }
 

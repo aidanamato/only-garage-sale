@@ -1,6 +1,7 @@
 import React from 'react';
 import { usePageContext } from '../../utils/GlobalState';
 import Auth from '../../utils/auth';
+import { Link } from 'react-router-dom';
 
 // import mui here
 import AppBar from '@mui/material/AppBar';
@@ -46,7 +47,9 @@ const AppNavbar = () => {
               {/* <MenuIcon /> */}
             </IconButton>
             <Typography variant="h7" component="div" sx={{ flexGrow: 1 }}>
-              Only Garage Sale
+              <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>
+                Only Garage Sale
+              </Link>
             </Typography>
             {Auth.loggedIn() ?
               <> 

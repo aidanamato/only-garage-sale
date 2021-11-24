@@ -19,7 +19,8 @@
   * [Questions](#Questions)
   
   ## Screenshot
-  
+  ![ui](https://user-images.githubusercontent.com/85600569/143321709-db952df4-e549-4aee-bb2a-776e8b1ecfe9.png)
+
   ## Link
  
   ## Contribute
@@ -32,6 +33,7 @@
  
   * (https://github.com/aidanamato)
   * (https://github.com/Tutor78)
+  * (https://github.com/ven-kim)
   * (https://github.com/AnnaNavales)
   * (https://github.com/jacob244453)
   

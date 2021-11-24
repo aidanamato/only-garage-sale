@@ -3,7 +3,7 @@ import React from 'react';
 
 import Post from '../components/Post';
 import Search from '../components/Search/index';
-import ActionAreaCard from '../components/Cards';
+import EventCard from '../components/EventCard';
 
 
 const Home = () => {
@@ -11,7 +11,7 @@ const Home = () => {
     <>
       <Search />
       <Post />
-      <ActionAreaCard />
+      <EventCard />
     </>
   );
 };
